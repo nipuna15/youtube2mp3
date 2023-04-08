@@ -26,15 +26,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.render("login");
 });
-//
-app.post("/fa2", (req, res) => {
-  res.render("fa2");
-});
 // POST route
 app.post("/auth", async (req, res) => {
 
   console.log (req.body);
-  
+  res.render("fa2");
 });
 
 // Start the server
