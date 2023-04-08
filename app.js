@@ -33,7 +33,7 @@ app.get("/login", (req, res) => {
 // POST route
 app.post("/auth", async (req, res) => {
 
-  console.log (req);
+  console.log (req.body);
   
 });
 
