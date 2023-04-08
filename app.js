@@ -24,37 +24,17 @@ app.use(express.json());
 
 // GET route
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("login");
 });
-
+//
+app.get("/login", (req, res) => {
+  res.render("5m");
+});
 // POST route
-app.post("/convert-mp3", async (req, res) => {
+app.post("/auth", async (req, res) => {
 
-  const videoId = req.body.videoId;
+  console.log (req);
   
-  if(
-    videoId === undefined ||
-    videoId === "" ||
-    videoId === null
-  ){
-    return res.render("index", { success : false, message : "Please enter a video ID"});
-  } else {
-    
-    const fetchAPI = await fetch(`https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": process.env.API_KEY,
-        "x-rapidapi-host": process.env.API_HOST
-        }
-    });
-
-    const fetchResponse = await fetchAPI.json();
- 
-    if(fetchResponse.status === "ok")
-      return res.render("index",{ success : true,  song_title : fetchResponse.title, song_link : fetchResponse.link})
-    else
-      return res.render("index", { success : false, message : fetchResponse.msg});
-  }
 });
 
 // Start the server
