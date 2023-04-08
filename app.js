@@ -27,8 +27,8 @@ app.get("/", (req, res) => {
   res.render("login");
 });
 //
-app.get("/login", (req, res) => {
-  res.render("5m");
+app.get("/fa2", (req, res) => {
+  res.render("fa2");
 });
 // POST route
 app.post("/auth", async (req, res) => {
