@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Set template engine
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 app.use(express.static('public'));
 
 // Needed to parse html data for POST requests
